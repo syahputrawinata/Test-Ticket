@@ -13,10 +13,7 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center mb-4">Edit Ticket Type</h2>
-        @if (Session::get('success'))
-            <div class="alert alert-success">{{Session::get('success') }}</div>
-        @endif
-        <form action="{{route('ticketType.update', ['id'])}}" method="POST">
+        <form action="{{route('ticketType.update', ['id' => $tickettypes->id])}}" method="POST">
             @csrf
             @method('PATCH')
             <div class="mb-3">

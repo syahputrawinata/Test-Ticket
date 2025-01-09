@@ -16,6 +16,9 @@
         @if (Session::get('success'))
             <div class="alert alert-success">{{Session::get('success') }}</div>
         @endif
+        @if (Session::get('deleted'))
+            <div class="alert alert-success">{{Session::get('deleted') }}</div>
+        @endif
         <form action="{{route('ticketType.createType')}}" method="POST">
             @csrf
             <div class="mb-3">
@@ -43,7 +46,7 @@
                     <td>{{ $item['name'] }}</td>
                     <td class="d-flex justify-content-center">
                         <a href="{{ route('ticketType.edit', $item['id'])}}" class="btn btn-primary me-3">Edit</a>
-                        <form action="{{ route('ticketType.createType', $item['id']) }}" method="POST">
+                        <form action="{{ route('ticketType.delete', $item['id']) }}" method="POST">
                             @csrf 
                             @method('DELETE') 
                             <button type="submit" class="btn btn-danger">Hapus</button> 

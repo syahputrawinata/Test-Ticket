@@ -28,12 +28,20 @@ Route::prefix('/ticketType')->name('ticketType.')->group(function(){
     Route::post('/store', [TicketTypeController::class, 'store'])->name('store');
     Route::get('/{id}', [TicketTypeController::class, 'edit'])->name('edit');
     Route::patch('/{id}', [TicketTypeController::class, 'update'])->name('update');
+    Route::delete('/{id}', [TicketTypeController::class, 'destroy'])->name('delete');
 });
 
 ///////////////////Project page////////////////////
 Route::prefix('/project')->name('project.')->group(function(){
     Route::get('/', [TicketProjectController::class, 'index'])->name('index');
     Route::post('/create', [TicketProjectController::class, 'createProject'])->name('createProject');
-    Route::post('/{id}', [TicketProjectController::class, 'edit'])->name('edit');
-    Route::post('/{id}', [TicketProjectController::class, 'update'])->name('update');
+    Route::get('/{id}', [TicketProjectController::class, 'edit'])->name('edit');
+    Route::patch('/{id}', [TicketProjectController::class, 'update'])->name('update');
+    Route::delete('/{id}', [TicketProjectController::class, 'destroy'])->name('delete');
+});
+
+///////////////////Project page////////////////////
+Route::prefix('/ticket')->name('ticket.')->group(function(){
+    Route::get('/', [TicketController::class, 'index'])->name('index');
+    Route::post('/create', [TicketController::class, 'createTicket'])->name('createProject');
 });

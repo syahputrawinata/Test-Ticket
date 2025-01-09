@@ -27,7 +27,7 @@
                     <a class="nav-link active" aria-current="page" href="{{route('project.index')}}">KelolaTipeProject</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Tiket</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('ticket.index')}}">Tiket</a>
                   </li>
                 </ul>
               </div>

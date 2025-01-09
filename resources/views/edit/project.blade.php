@@ -13,10 +13,7 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center mb-4">Edit Ticket Type</h2>
-        @if (Session::get('success'))
-            <div class="alert alert-success">{{Session::get('success') }}</div>
-        @endif
-        <form action="{{route('ticketType.update', ['id'])}}" method="POST">
+        <form action="{{route('project.update', ['id' => $projects->id])}}" method="POST">
             @csrf
             @method('PATCH')
             <div class="mb-3">
@@ -26,6 +23,7 @@
             <button type="submit" class="btn btn-primary w-100">Update</button>
         </form>
     </div>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

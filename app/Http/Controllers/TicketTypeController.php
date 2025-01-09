@@ -48,6 +48,14 @@ class TicketTypeController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('ticketType.createType')->with('success', 'Berhasil Mengubah Data!');
+        return redirect()->route('ticketType.index')->with('success', 'Berhasil Mengubah Data!');
+    }
+
+    public function destroy($id)
+    {
+        //
+        ticketType::where('id', $id)->delete();
+
+        return redirect()->back()->with('deleted', 'Berhasil Menghapus Data!');
     }
 }
